@@ -16,6 +16,10 @@ h1 {
     color: rgb(255, 255, 255);
 }
 
+a{
+    text-decoration: none;
+    color: #ccc;
+}
 
 textarea {
   border-radius: 15px;
