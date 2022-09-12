@@ -593,6 +593,7 @@ function english_to_arabic() {
   if (document.getElementById("output").value != ""){
     document.getElementById("output").setAttribute("Style","text-align: right; font-size: 35px;");
   }
+  document.getElementById("output").scrollTop = document.getElementById("output").scrollHeight;
   
 }
 
