@@ -26,6 +26,7 @@ function setCookie(cname,cvalue,exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   let expires = "expires=" + d.toUTCString();
+  cvalue = cvalue.split('\n').join('\\');
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   console.log(`Cookie set: \'${document.cookie}\'`);
 }
@@ -41,7 +42,8 @@ function getCookie(name) {
 }
 function checkCookie() {
   let prevInp = getCookie("prevText");
-  console.log(`Previous Text Was: ${prevInp}`);
+  prevInp = prevInp.split('\\').join('\n');
+  console.log(`Previous Text Was: \'${prevInp}\'`);
   document.getElementById("input_text").value = prevInp;
   english_to_arabic();
 }
