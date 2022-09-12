@@ -6,14 +6,13 @@
     <link id="style" rel="stylesheet" href="./dark.css">
     <link rel="icon" href="./images/Write_Arabic-logo-removedbg.png" sizes="32x32">
 </head>
-    <body>
-
+    <body onload="checkCookie()">
         <h1>Arabic Phonetic Output<br> <span style="font-size: 25px">by KMFRuhan</span> </h1> <br>
         <div class="main">
         <textarea id="output" placeholder="Arabic text will appear here. Just press Ctrl+C to copy this." readonly="" style="text-align: left; font-size: normal"></textarea> <br><br>
         <textarea id="input_text" autofocus="autofocus" placeholder="Type the phonetic form in English." spellcheck="false" autocapitalize="None"></textarea>
         </div>
         <br><br><br>
-        <footer onclick="changeTheme()">Click to get <span id="themeName">light</span> theme</footer>
+        <footer><span onclick="changeTheme()">Click to get <span id="themeName">light</span> theme</span></footer>
 </body>
 </html>

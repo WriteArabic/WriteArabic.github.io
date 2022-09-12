@@ -22,8 +22,37 @@ _pj = {};
 
 _pj_snippets(_pj);
 
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+function checkCookie() {
+  let prevInp = getCookie("prevText");
+  console.log(`Previous Text Was: ${prevInp}`);
+  if (prevInp != ""){
+    document.getElementById("input_text").value = prevInp;
+  }
+}
+
+
 function english_to_arabic() {
   var inp = document.getElementById("input_text").value;
+
+  setCookie("prevText", inp, 7);
+  console.log(`Cookie set: \'${inp}\'`);
+
   var arabic, arabic_prev, arabic_prev2, arabic_prev3, consonants, ginipig, i, idgaam_nun, next, next2, next3, next4, prev, prev2, prev3, qamariyya, sakinable;
   sakinable = ["b", "t", "c", "j", "H", "Q", "d", "z", "r", "Z", "s", "S", "C", "D", "T", "J", "`", "g", "f", "q", "K", "k", "l", "m", "n", "w", "h", "'", "\"", "|", "y"];
   consonants = ["*", "'", "\"", "|", "`", "a", "A", "E", "b", "c", "C", "d", "D", "f", "g", "h", "H", "j", "J", "k", "K", "l", "m", "n", "q", "Q", "r", "s", "S", "t", "T", "w", "W", "y", "Y", "z", "Z"];
@@ -554,15 +583,18 @@ function english_to_arabic() {
       arabic += "\u0670";
       i += 3;
     }
-
+    
     i += 1;
   }
 
   document.getElementById("output").value = arabic;
   document.getElementById("output").setAttribute("Style","text-align: right; font-size: 35px;");
-  
 
+  
 }
+
+
+
 
 function copy(){
   // Get the text field
@@ -584,7 +616,11 @@ window.onkeydown = function(event){
 }
 
 window.onkeyup = function() {
-  english_to_arabic();
+  if (document.getElementById("input_text").value == ""){
+    document.getElementById("output").value = "";
+  }else{
+    english_to_arabic();
+  }
   if(document.getElementById("output").value == ""){
     document.getElementById("output").setAttribute("Style","text-align: left; font-size: normal");
   }
