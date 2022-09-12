@@ -28,7 +28,7 @@ function setCookie(cname,cvalue,exdays) {
   let expires = "expires=" + d.toUTCString();
   cvalue = cvalue.split('\n').join('\\');
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  console.log(`Cookie set: \'${document.cookie}\'`);
+  console.log(`Cookie set: \'${cvalue}\'`);
 }
 function getCookie(name) {
   var nameEQ = name + "=";
