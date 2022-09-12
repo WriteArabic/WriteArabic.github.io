@@ -27,6 +27,7 @@ function setCookie(cname,cvalue,exdays) {
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  console.log(`Cookie set: \'${document.cookie}\'`);
 }
 function getCookie(name) {
   var nameEQ = name + "=";
@@ -49,7 +50,6 @@ function english_to_arabic() {
   var inp = document.getElementById("input_text").value;
 
   setCookie("prevText", inp, 7);
-  console.log(`Cookie set: \'${inp}\'`);
 
   var arabic, arabic_prev, arabic_prev2, arabic_prev3, consonants, ginipig, i, idgaam_nun, next, next2, next3, next4, prev, prev2, prev3, qamariyya, sakinable;
   sakinable = ["b", "t", "c", "j", "H", "Q", "d", "z", "r", "Z", "s", "S", "C", "D", "T", "J", "`", "g", "f", "q", "K", "k", "l", "m", "n", "w", "h", "'", "\"", "|", "y"];
