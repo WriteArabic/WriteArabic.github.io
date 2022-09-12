@@ -28,7 +28,6 @@ function setCookie(cname,cvalue,exdays) {
   let expires = "expires=" + d.toUTCString();
   cvalue = cvalue.split('\n').join('\\');
   document.cookie = `${cname}=${cvalue};${expires};path=/`;
-  console.log(`Cookie set: \'${document.cookie}\'`);
 }
 function getCookie(name) {
   var nameEQ = name + "=";
@@ -43,7 +42,7 @@ function getCookie(name) {
 function checkCookie() {
   let prevInp = getCookie("prevText");
   prevInp = prevInp.split('\\').join('\n');
-  console.log(`Previous Text Was: \'${prevInp}\'`);
+  console.log(`Previous Text Loaded: \'${prevInp}\'`);
   document.getElementById("input_text").value = prevInp;
   english_to_arabic();
 }
