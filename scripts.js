@@ -616,11 +616,7 @@ window.onkeydown = function(event){
 }
 
 window.onkeyup = function() {
-  if (document.getElementById("input_text").value == ""){
-    document.getElementById("output").value = "";
-  }else{
-    english_to_arabic();
-  }
+  english_to_arabic();
   if(document.getElementById("output").value == ""){
     document.getElementById("output").setAttribute("Style","text-align: left; font-size: normal");
   }
