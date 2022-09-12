@@ -41,10 +41,8 @@ function getCookie(name) {
 function checkCookie() {
   let prevInp = getCookie("prevText");
   console.log(`Previous Text Was: ${prevInp}`);
-  if (prevInp != ""){
-    document.getElementById("input_text").value = prevInp;
-    english_to_arabic();
-  }
+  document.getElementById("input_text").value = prevInp;
+  english_to_arabic();
 }
 
 function english_to_arabic() {
@@ -588,8 +586,9 @@ function english_to_arabic() {
   }
 
   document.getElementById("output").value = arabic;
-  document.getElementById("output").setAttribute("Style","text-align: right; font-size: 35px;");
-
+  if (document.getElementById("output").value != ""){
+    document.getElementById("output").setAttribute("Style","text-align: right; font-size: 35px;");
+  }
   
 }
 
