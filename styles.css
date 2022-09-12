@@ -34,6 +34,10 @@ textarea {
   resize: none;
 }
 
+footer{
+    color: white;
+}
+
  
     #input_text{
         height: 350px;

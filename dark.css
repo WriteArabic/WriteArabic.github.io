@@ -35,6 +35,10 @@ textarea {
   resize: none;
 }
 
+footer{
+    color: #ccc;
+}
+
  
     #input_text{
         height: 350px;
