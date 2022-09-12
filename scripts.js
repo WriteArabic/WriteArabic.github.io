@@ -589,3 +589,16 @@ window.onkeyup = function() {
     document.getElementById("output").setAttribute("Style","text-align: left; font-size: normal");
   }
 }
+
+function changeTheme() {
+  var currentTheme = document.getElementById("style").getAttribute("href");
+
+  if (currentTheme == "./styles.css"){
+    document.getElementById("style").setAttribute("href","./dark.css");
+    document.getElementById("themeName").innerHTML = "light";
+  }
+  else if (currentTheme == "./dark.css"){
+    document.getElementById("style").setAttribute("href","./styles.css");
+    document.getElementById("themeName").innerHTML = "dark";
+  }
+}
