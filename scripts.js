@@ -65,7 +65,7 @@ function checkCookie() {
 function english_to_arabic() {
   var inp = document.getElementById("input_text").value;
 
-  setCookie("prevText", inp, 7);
+  setCookie("prevText", inp, 90);
 
   var arabic, arabic_prev, arabic_prev2, arabic_prev3, consonants, ginipig, i, idgaam_nun, next, next2, next3, next4, prev, prev2, prev3, qamariyya, sakinable;
   sakinable = ["b", "t", "c", "j", "H", "Q", "d", "z", "r", "Z", "s", "S", "C", "D", "T", "J", "`", "g", "f", "q", "K", "k", "l", "m", "n", "w", "h", "'", "\"", "|", "y"];
@@ -644,11 +644,11 @@ function changeTheme() {
   if (currentTheme == "./styles.css"){
     document.getElementById("style").setAttribute("href","./dark.css");
     document.getElementById("themeName").innerHTML = "light";
-    setCookie("prevTheme","dark",7);
+    setCookie("prevTheme","dark",90);
   }
   else if (currentTheme == "./dark.css"){
     document.getElementById("style").setAttribute("href","./styles.css");
     document.getElementById("themeName").innerHTML = "dark";
-    setCookie("prevTheme","light",7);
+    setCookie("prevTheme","light",90);
   }
 }
