@@ -632,9 +632,20 @@ function changeTheme() {
   if (currentTheme == "./styles.css"){
     document.getElementById("style").setAttribute("href","./dark.css");
     document.getElementById("themeName").innerHTML = "light";
+    setCookie("prevTheme","light",7);
   }
   else if (currentTheme == "./dark.css"){
     document.getElementById("style").setAttribute("href","./styles.css");
     document.getElementById("themeName").innerHTML = "dark";
+    setCookie("prevTheme","dark",7);
+  }
+}
+
+function restorePrevTheme(){
+  let prevTheme = getCookie("prevTheme");
+  if (prevTheme == "dark"){
+    document.getElementById("style").setAttribute("href","./dark.css");
+  }else if(prevTheme == "light"){
+    document.getElementById("style").setAttribute("href","./styles.css");
   }
 }
