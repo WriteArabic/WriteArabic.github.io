@@ -44,7 +44,6 @@ function getCookie(name) {
 function checkCookie() {
   let prevInp = getCookie("prevText");
   prevInp = prevInp.split('\\').join('\n');
-  console.log(`Previous Text Loaded: \'${prevInp}\'`);
   document.getElementById("input_text").value = prevInp;
   english_to_arabic();
 }
