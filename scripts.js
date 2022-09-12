@@ -22,6 +22,8 @@ _pj = {};
 
 _pj_snippets(_pj);
 
+
+
 function setCookie(cname,cvalue,exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -46,6 +48,8 @@ function checkCookie() {
   document.getElementById("input_text").value = prevInp;
   english_to_arabic();
 }
+
+
 
 function english_to_arabic() {
   var inp = document.getElementById("input_text").value;
