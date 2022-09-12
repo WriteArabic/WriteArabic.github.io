@@ -46,7 +46,6 @@ function checkCookie() {
   }
 }
 
-
 function english_to_arabic() {
   var inp = document.getElementById("input_text").value;
 
