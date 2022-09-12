@@ -1,3 +1,15 @@
+function restorePrevTheme(){
+  let prevTheme = getCookie("prevTheme");
+  if (prevTheme == "dark"){
+    document.getElementById("style").setAttribute("href","./dark.css");
+    document.getElementById("themeName").innerHTML = "light";
+  }else if(prevTheme == "light"){
+    document.getElementById("style").setAttribute("href","./styles.css");
+    document.getElementById("themeName").innerHTML = "dark";
+  }
+}
+
+
 
 var _pj;
 
@@ -638,16 +650,5 @@ function changeTheme() {
     document.getElementById("style").setAttribute("href","./styles.css");
     document.getElementById("themeName").innerHTML = "dark";
     setCookie("prevTheme","light",7);
-  }
-}
-
-function restorePrevTheme(){
-  let prevTheme = getCookie("prevTheme");
-  if (prevTheme == "dark"){
-    document.getElementById("style").setAttribute("href","./dark.css");
-    document.getElementById("themeName").innerHTML = "light";
-  }else if(prevTheme == "light"){
-    document.getElementById("style").setAttribute("href","./styles.css");
-    document.getElementById("themeName").innerHTML = "dark";
   }
 }
