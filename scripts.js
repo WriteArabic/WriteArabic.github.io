@@ -43,6 +43,7 @@ function checkCookie() {
   console.log(`Previous Text Was: ${prevInp}`);
   if (prevInp != ""){
     document.getElementById("input_text").value = prevInp;
+    english_to_arabic();
   }
 }
 
