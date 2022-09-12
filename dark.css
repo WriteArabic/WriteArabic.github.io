@@ -33,6 +33,11 @@ textarea {
   color: aliceblue;
   font-size: 20px;
   resize: none;
+  scrollbar-width: 0px;
+}
+textarea::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }
 
 footer{
